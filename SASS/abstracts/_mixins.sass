@@ -1,0 +1,19 @@
+@mixin style-link($color)
+        text-transform: uppercase
+        text-decoration: none
+        display: inline-block
+        color: $color
+
+//для float (grid)
+@mixin clearfix()
+        &::after
+                content: ""
+                display: table
+                clear: both
+
+@mixin contant-container()
+        max-width: 130rem
+        margin: 0 auto
+        
+        
+    

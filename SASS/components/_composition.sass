@@ -1,0 +1,30 @@
+.composition
+    @include contant-container()
+    position: relative
+    &__photo
+        width: 55%
+        box-shadow: $box-shadow
+        border-radius: .5rem
+        position: absolute
+        z-index: 1
+        transition: all .3s
+        outline-offset: 1.5rem
+        &_n1
+            top: 0
+            left: 0rem
+        &_n2
+            top: 2rem
+            right: 0rem
+        &_n3
+            top: 13rem
+            left: 10rem
+        &:hover
+            z-index: 2
+            transform: scale(1.1)
+            outline: 1rem solid $color-brown-light
+
+    &:hover &__photo:not(:hover)
+        transform: scale(.94)
+        
+
+            
