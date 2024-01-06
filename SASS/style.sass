@@ -10,11 +10,54 @@
 @import "components/_button.sass"
 @import "components/_button-text.sass"
 @import "components/_composition.sass"
+@import "components/_adventure-card.sass"
+@import "components/_tour-card.sass"
+@import "components/_review-card.sass"
+@import "components/_video-bg.sass"
+@import "components/_book.sass"
+
+
+
 
 @import "layout/_header.sass"
 @import "layout/_grid.sass"
+@import "layout/_footer.sass"
+@import "layout/_navigation.sass"
 
 @import "pages/_home.sass"
+
+
+.card
+    height: 50rem
+    background: $color-white
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    margin: 10rem
+    &__side
+        color: rgb(112, 116, 101)
+        height: 50rem
+        width: 100%
+        transition: all .8s ease-out
+        backface-visibility: hidden
+        position: absolute
+        top: 0
+        left: 0
+        &_front
+            background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+            display: flex
+            align-items: center
+            justify-content: center
+        &_back
+            background: rgb(17, 74, 153)
+            transform: rotateY(180deg)
+            display: flex
+            align-items: center
+            justify-content: center
+    &:hover &__side_back
+        transform: rotateY(0deg)
+    &:hover &__side_front
+        transform: rotateY(180deg)
 
 
 

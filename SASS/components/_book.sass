@@ -1,0 +1,82 @@
+.book_contant
+    height: 50rem
+    width: 100%
+    background: linear-gradient(117deg, rgba(255,255,255,.7) 0%, rgba(255,255,255,.7) 55%, rgba(186,133,84,0.8) 55%, rgba(161,79,3,0.7) 100%), url(../img/form-bg.jpg) center / cover no-repeat
+    box-shadow: $box-shadow
+    border-radius: .5rem
+    overflow: hidden
+
+
+.form
+    padding-top: 5rem
+    padding-left: 5rem
+    width: 60%
+    &__group
+        &:not(:last-child)
+            margin-bottom: 2rem
+            
+    &__input
+        font-size: $font-size-paragraph
+        letter-spacing: .2rem
+        font-weight: 400
+        color: $color-black
+        background-color: $color-white
+        padding: 2rem 0 2rem 2rem
+        border: none
+        border-bottom: .2rem solid transparent
+        border-radius: .5rem
+        width: 75%
+        &:focus
+            outline: none
+            border-bottom: .2rem solid #66d763
+            box-shadow: $box-shadow
+        &:focus:invalid
+            border-bottom: .2rem solid #D76363
+            
+    &__label
+        font-size: $font-size-paragraph
+        letter-spacing: .2rem
+        font-weight: 400
+        display: block
+        margin-top: 2rem
+        margin-left: 1.5rem
+        transition: all .7s
+
+    
+    &__input:placeholder-shown + &__label
+        opacity: 0
+        visibility: hidden
+        transform: translateY(-3rem)
+
+    &__radio
+        display: inline-block
+        width: 40%
+        position: relative
+        padding-left: 3.7rem
+        &_label
+            cursor: pointer
+        &_btn
+            display: block
+            width: 3rem
+            height: 3rem
+            border: .5rem solid $color-brown-dark
+            border-radius: 50%
+            position: absolute
+            left: .1rem
+            top: -.4rem
+            padding: 1rem
+            &::after
+                content: ""
+                display: block
+                height: 1.5rem
+                width: 1.5rem
+                background: $color-brown-dark
+                border-radius: 50%
+                @include blocks-centering(50%)
+                transition: all .2s
+                opacity: 0
+        &_input
+            display: none
+    
+    &__radio_input:checked ~ &__radio_label &__radio_btn::after
+        opacity: 1

@@ -11,9 +11,15 @@
                 display: table
                 clear: both
 
-@mixin contant-container()
-        max-width: 130rem
-        margin: 0 auto
+
+@mixin blocks-centering($top)
+        position: absolute
+        top: $top
+        left: 50%
+        transform: translate(-50%, -50%)
+        
+
+
         
         
     
