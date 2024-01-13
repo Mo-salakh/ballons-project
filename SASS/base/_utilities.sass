@@ -3,12 +3,16 @@
 
 .padding-bottom-10px
     padding-bottom: 1rem
+    @include respond(tab-land)
+     margin-bottom: .5rem
 
 .padding-bottom-30px
     padding-bottom: 3rem
 
 .padding-bottom-80px
     padding-bottom: 8rem
+    @include respond(tab-port)
+        padding-bottom: 4rem
 
 .margin_bottom-80px
     margin-bottom: 8rem

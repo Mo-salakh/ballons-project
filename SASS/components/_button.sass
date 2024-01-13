@@ -8,6 +8,15 @@
         position: relative
         font-size: 2rem
         border: none
+        @include respond(tab-land)
+            font-size: 1.5rem
+            padding: 1.3rem 3.8rem
+        @include respond(tab-port)
+            font-size: 2rem
+            padding: 1.7rem 4.4rem
+        @include respond(phone)
+            padding: 2rem 3rem
+            font-size: 1.5rem
     &:hover
         transform: translateY(-4px)
         box-shadow: $box-shadow
@@ -38,3 +47,4 @@
         &:hover
         &::after
             background: $color-brown-dark
+

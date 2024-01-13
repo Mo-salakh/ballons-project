@@ -1,5 +1,11 @@
 .section-about
-    padding: 8rem 0 20rem
+    padding-bottom: 20rem
+    padding-top: 8rem
+    @include respond(tab-land)
+        padding-bottom: 13rem
+    @include respond(tab-port)
+        padding-bottom: 40rem
+
 
 .section-adventure
     padding: 21rem 0
@@ -7,9 +13,12 @@
     transform: skewY(7deg)
     & > *
         transform: skewY(-7deg)
+    @include respond(tab-land)
+     padding: 15rem 0
 
 .section-toure
-    padding-top: 21rem 
+    padding-top: 21rem
+
 
 .section-review
     padding: 8rem 0
@@ -18,3 +27,6 @@
 .section-book
     padding: 10rem
     background: linear-gradient(90deg, rgba($color-brown-dark, 0.7) 0.03%, rgba($color-brown-dark, 0.9) 99.94%)
+    @include respond(tab-port)
+        padding: 2.5rem
+    

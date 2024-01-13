@@ -4,6 +4,11 @@
     -moz-perspective: 150rem
     background: $color-white
     position: relative
+    @include respond(tab-port)
+        height: auto
+        margin-bottom: 3rem
+
+
     &__side
         color: white
         transition: all .7s ease-out
@@ -16,21 +21,46 @@
         border-radius: .5rem
         box-shadow: $box-shadow
         overflow: hidden
+        @include respond(tab-port)
+            position: relative
+
+                
+
         &_front
             background: $color-white
+
+            @include respond(tab-port)
+                padding-bottom: 75rem
+            @include respond(phone)
+                padding-bottom: 80rem
+            
         &_back
-            background: rgba($color-brown-dark, .8)
+            background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
             transform: rotateY(180deg)
+            @include respond(tab-port)
+                transform: rotateY(0deg)
+                padding-top: 12rem
+                margin-top: -11rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+
 
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
+
     &:hover &__side_back
         transform: rotateY(0deg)
+        
+
 
     &__img
         height: 40%
         clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 80%)
         background-blend-mode: hard-light
+        @include respond(tab-port)
+            height: 30rem
+            
         &_1
             background: url(../img/card-1.jpg) center / cover no-repeat
         &_2 
@@ -43,19 +73,31 @@
         position: absolute
         top: 17rem
         right: 0rem
+        @include respond(tab-port)
+            top: 27rem
+
         &_span
             background: linear-gradient(70deg, $color-brown-light, $color-brown-dark)
             padding: 1rem 2rem 0.3rem 2rem
             font-weight: 200
             text-transform: uppercase
             font-size: 2.8rem
+            @include respond(tab-port)
+                font-size: 3.8rem
+            @include respond(phone)
+                font-size: 2.5rem
             &-1
             &-2
                 padding-bottom: 1rem
                 padding-top: 0rem
     &__list
-        margin-top:5.5rem
+        width: 75%
+        margin: 0 auto
+        
         ul 
+            margin-top: 7rem
+            @include respond(tab-port)
+                margin-top: 9rem
             li
                 border-bottom: 1px solid $color-gray
                 color: $color-gray
@@ -64,9 +106,17 @@
                 display: inline-block
                 &:not(:last-child)
                     margin-bottom: 2rem
+                @include respond(tab-port)
+                    font-size: 2rem
 
     &__backContent
         @include blocks-centering(50%)
+        @include respond(tab-port)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            text-align: center
         &_text
             text-align: center
             color: $color-white

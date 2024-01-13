@@ -5,27 +5,48 @@
     box-shadow: $box-shadow
     border-radius: .5rem
     overflow: hidden
+    @include respond(tab-port)
+        background: linear-gradient(117deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.7) 505%, rgba(186,133,84,0.8) 55%, rgba(161,79,3,0.7) 100%), url(../img/form-bg.jpg) center / cover no-repeat
 
 
 .form
     padding-top: 5rem
     padding-left: 5rem
-    width: 60%
+    width: 70%
+    @include respond(tab-land)
+        width: 66%
+    @include respond(tab-port)
+        width: 100%
+        padding-top: 2.5rem
+        padding-left: 2.5rem
     &__group
         &:not(:last-child)
-            margin-bottom: 2rem
+            margin-bottom: 1.5rem
+        @include respond(tab-land)
+            &:not(:last-child)
+                margin-bottom: .5rem
+
+
             
     &__input
         font-size: $font-size-paragraph
         letter-spacing: .2rem
         font-weight: 400
         color: $color-black
-        background-color: $color-white
+        background-color: #fff
         padding: 2rem 0 2rem 2rem
         border: none
         border-bottom: .2rem solid transparent
         border-radius: .5rem
         width: 75%
+        @include respond(tab-port)
+            box-shadow: $box-shadow
+            width: 90%
+            
+
+
+
+        
         &:focus
             outline: none
             border-bottom: .2rem solid #66d763
@@ -41,6 +62,9 @@
         margin-top: 2rem
         margin-left: 1.5rem
         transition: all .7s
+        @include respond(tab-land)
+            margin-top: 1.3rem
+            marign-left: 1rem
 
     
     &__input:placeholder-shown + &__label
@@ -50,9 +74,12 @@
 
     &__radio
         display: inline-block
-        width: 40%
         position: relative
         padding-left: 3.7rem
+        @include respond(tab-land)
+            display: block
+            margin-bottom: 1.5rem
+
         &_label
             cursor: pointer
         &_btn
